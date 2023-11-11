@@ -10,8 +10,8 @@ player_trail = ExtResource("2_extyl")
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(64, 0)
 rotation = 1.5708
-polygon = PackedVector2Array(-16, -48, 0, -80, 16, -48)
+polygon = PackedVector2Array(-8.00017, -48, -0.000231679, -64, 7.99983, -48)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.572549, 0, 0, 1)
-polygon = PackedVector2Array(112, -16, 144, 0, 112, 16)
+polygon = PackedVector2Array(112, -8, 128, 0, 112, 8)

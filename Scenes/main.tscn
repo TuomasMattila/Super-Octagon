@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cedtn1pym0lqm" path="res://Scenes/center.tscn" id="4_oxw0v"]
 [ext_resource type="PackedScene" uid="uid://eiaq21uhv1t7" path="res://Scenes/obstacle_spawner.tscn" id="5_0jtgi"]
 
-
 [node name="Main" type="Node2D" groups=["main"]]
 process_mode = 3
 position = Vector2(640, 368)

@@ -12,4 +12,4 @@ func _process(delta):
 		owner.find_child("GameObjects").add_child(obs)
 		obs.position = position
 		time_until_spawn = rng.randf_range(Globals.min_obstacle_spawn_time, 2.0)
-		print("Min spawn time: " + str(Globals.min_obstacle_spawn_time) + " Speed: " + str(Globals.obstacle_speed))
+		#("Min spawn time: " + str(Globals.min_obstacle_spawn_time) + " Speed: " + str(Globals.obstacle_speed))

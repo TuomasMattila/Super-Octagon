@@ -7,4 +7,3 @@ func _process(delta):
 	time += delta
 	rotate(0.3 * delta)
 	skew = 0.2 * sin(time)
-	print(skew)
