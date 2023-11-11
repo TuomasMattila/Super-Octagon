@@ -2,10 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_37pn5"]
 [ext_resource type="Script" path="res://Scripts/GameObjects.gd" id="2_iwod4"]
-[ext_resource type="PackedScene" uid="uid://cxtcpbpciwr74" path="res://background.tscn" id="3_4cpjj"]
+[ext_resource type="PackedScene" uid="uid://cxtcpbpciwr74" path="res://Scenes/background.tscn" id="3_4cpjj"]
 [ext_resource type="PackedScene" uid="uid://c1y2ltvdmoh7y" path="res://Scenes/player.tscn" id="3_q1c70"]
 [ext_resource type="PackedScene" uid="uid://cedtn1pym0lqm" path="res://Scenes/center.tscn" id="4_oxw0v"]
 [ext_resource type="PackedScene" uid="uid://eiaq21uhv1t7" path="res://Scenes/obstacle_spawner.tscn" id="5_0jtgi"]
+
 
 [node name="Main" type="Node2D" groups=["main"]]
 process_mode = 3

@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://coegbwni6fe3w"]
 
-[ext_resource type="Script" path="res://player_trail.gd" id="1_m1ypl"]
+[ext_resource type="Script" path="res://Scripts/player_trail.gd" id="1_x0lq1"]
 
 [node name="PlayerTrail" type="Polygon2D"]
 self_modulate = Color(1, 1, 1, 0.380392)
 show_behind_parent = true
 z_index = 1
 polygon = PackedVector2Array(112, -16, 144, 0, 112, 16)
-script = ExtResource("1_m1ypl")
+script = ExtResource("1_x0lq1")
