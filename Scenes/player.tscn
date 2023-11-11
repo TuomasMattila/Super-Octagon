@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1y2ltvdmoh7y"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_xi04r"]
+[ext_resource type="PackedScene" uid="uid://coegbwni6fe3w" path="res://player_trail.tscn" id="2_5i5ah"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_xi04r")
+player_trail = ExtResource("2_5i5ah")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(64, 0)
+rotation = 1.5708
+polygon = PackedVector2Array(-16, -48, 0, -80, 16, -48)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.572549, 0, 0, 1)
+polygon = PackedVector2Array(112, -16, 144, 0, 112, 16)

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cedtn1pym0lqm"]
+
+[node name="Center" type="Polygon2D"]
+z_index = 1
+color = Color(0.0431373, 0.0431373, 0.0431373, 1)
+polygon = PackedVector2Array(0, -80, 32, -80, 80, -32, 80, 32, 32, 80, -32, 80, -80, 32, -80, -32, -32, -80)

@@ -1,0 +1,94 @@
+[gd_scene load_steps=2 format=3 uid="uid://6ffi87evph7l"]
+
+[ext_resource type="Script" path="res://Scripts/obstacle.gd" id="1_l0g6e"]
+
+[node name="Obstacle" type="Node2D"]
+z_index = 1
+script = ExtResource("1_l0g6e")
+
+[node name="TopArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopArea"]
+polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
+
+[node name="TopPolygon" type="Polygon2D" parent="TopArea"]
+color = Color(0.572549, 0, 0, 1)
+polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
+
+[node name="LeftArea" type="Area2D" parent="."]
+rotation = -1.5708
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftArea"]
+polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
+
+[node name="LeftPolygon" type="Polygon2D" parent="LeftArea"]
+color = Color(0.572549, 0, 0, 1)
+polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
+
+[node name="RightArea" type="Area2D" parent="."]
+rotation = 1.5708
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightArea"]
+polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
+
+[node name="RightPolygon" type="Polygon2D" parent="RightArea"]
+color = Color(0.572549, 0, 0, 1)
+polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
+
+[node name="BottomArea" type="Area2D" parent="."]
+rotation = -3.14159
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BottomArea"]
+polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
+
+[node name="BottomPolygon" type="Polygon2D" parent="BottomArea"]
+color = Color(0.572549, 0, 0, 1)
+polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
+
+[node name="TopRightArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopRightArea"]
+polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
+
+[node name="TopRightPolygon" type="Polygon2D" parent="TopRightArea"]
+color = Color(0.572549, 0, 0, 1)
+polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
+
+[node name="TopLeftArea" type="Area2D" parent="."]
+rotation = -1.5708
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopLeftArea"]
+polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
+
+[node name="TopLeftPolygon" type="Polygon2D" parent="TopLeftArea"]
+color = Color(0.572549, 0, 0, 1)
+polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
+
+[node name="BottomLeftArea" type="Area2D" parent="."]
+rotation = -3.14159
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BottomLeftArea"]
+polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
+
+[node name="BottomLeftPolygon" type="Polygon2D" parent="BottomLeftArea"]
+color = Color(0.572549, 0, 0, 1)
+polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
+
+[node name="BottomRightArea" type="Area2D" parent="."]
+rotation = 1.5708
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BottomRightArea"]
+polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
+
+[node name="BottomRightPolygon" type="Polygon2D" parent="BottomRightArea"]
+color = Color(0.572549, 0, 0, 1)
+polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
+
+[connection signal="body_entered" from="TopArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="LeftArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="RightArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="BottomArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="TopRightArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="TopLeftArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="BottomLeftArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="BottomRightArea" to="." method="_on_area_2d_body_entered"]

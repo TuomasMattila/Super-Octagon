@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb0aj6sug8lb5"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_37pn5"]
+[ext_resource type="Script" path="res://Scripts/GameObjects.gd" id="2_iwod4"]
+[ext_resource type="PackedScene" uid="uid://cxtcpbpciwr74" path="res://background.tscn" id="3_4cpjj"]
+[ext_resource type="PackedScene" uid="uid://c1y2ltvdmoh7y" path="res://Scenes/player.tscn" id="3_q1c70"]
+[ext_resource type="PackedScene" uid="uid://cedtn1pym0lqm" path="res://Scenes/center.tscn" id="4_oxw0v"]
+[ext_resource type="PackedScene" uid="uid://eiaq21uhv1t7" path="res://Scenes/obstacle_spawner.tscn" id="5_0jtgi"]
+
+[node name="Main" type="Node2D" groups=["main"]]
+process_mode = 3
+position = Vector2(640, 368)
+script = ExtResource("1_37pn5")
+
+[node name="GameObjects" type="Node2D" parent="."]
+process_mode = 1
+script = ExtResource("2_iwod4")
+
+[node name="Background" parent="GameObjects" instance=ExtResource("3_4cpjj")]
+
+[node name="Center" parent="GameObjects" instance=ExtResource("4_oxw0v")]
+z_index = 2
+
+[node name="Player" parent="GameObjects" instance=ExtResource("3_q1c70")]
+z_index = 1
+
+[node name="ObstacleSpawner" parent="GameObjects" instance=ExtResource("5_0jtgi")]
+
+[node name="UIElements" type="Node2D" parent="."]
+z_index = 3
+
+[node name="ScoreLabel" type="Label" parent="UIElements"]
+offset_left = -608.0
+offset_top = -336.0
+offset_right = -513.0
+offset_bottom = -288.0
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_font_sizes/font_size = 32
+text = "Score:"
+
+[node name="GameOverLabel" type="Label" parent="UIElements"]
+visible = false
+offset_left = -272.0
+offset_top = -240.0
+offset_right = 274.0
+offset_bottom = -192.0
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_font_sizes/font_size = 32
+text = "Game over! Press enter to try again"
+horizontal_alignment = 1
+
+[node name="PauseScreen" type="ColorRect" parent="UIElements"]
+visible = false
+offset_left = -640.0
+offset_top = -368.0
+offset_right = 640.0
+offset_bottom = 352.0
+color = Color(0, 0, 0, 0.45098)
+
+[node name="PauseLabel" type="Label" parent="UIElements/PauseScreen"]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 192.0
+offset_right = 704.0
+offset_bottom = 240.0
+theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Paused"
+horizontal_alignment = 1
