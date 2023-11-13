@@ -1,5 +1,7 @@
 extends Node2D
 
+# TODO: Create start screen
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# Pause game
@@ -12,11 +14,14 @@ func _process(delta):
 			
 	# Restarting game
 	if Input.is_action_pressed("ui_accept"):
-		Globals.in_game = true
-		Globals.score = 0
-		Globals.obstacle_speed = 2.0
-		Globals.min_obstacle_spawn_time = 1.0
+		reset_variables()
 		get_tree().reload_current_scene()
+		
+func reset_variables():
+	Globals.in_game = true
+	Globals.score = 0
+	Globals.obstacle_speed = 2.0
+	Globals.min_obstacle_spawn_time = 1.0
 	
 func update_score():
 	$UIElements/ScoreLabel.text = "Score: " + str(Globals.score)

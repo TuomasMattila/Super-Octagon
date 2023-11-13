@@ -1,10 +1,19 @@
 extends Node
 
+# Game status
 var in_game = true
+
+# Obstacle speed
 var obstacle_speed = 2.0
+var speed_acceleration = 0.1
+var max_speed = 9.0
+
+# Obstacle spawn rate
 var min_obstacle_spawn_time = 1.0
+var smallest_obstacle_spawn_time = 0.4
+var spawn_time_acceleration = 0.02
+
+# Other
 var score = 0
 var mouse_control = false
 
-#TODO: speed_acceleration, spawn_time_acceleration, max_speed, and smallest_obstacle_spawn_time
-# could be here too and then utilized in the obstacle script

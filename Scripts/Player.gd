@@ -3,11 +3,6 @@ extends CharacterBody2D
 const SPEED = 0.1
 @export var player_trail : PackedScene
 
-# TODO: Try making the normal controls better by either:
-# 1) creating acceleration (e.g. speed would go from 0.07 -> 0.1 in some short amount of time)
-#    - Allows for more careful movement
-# 2) Just make the speed slower
-
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

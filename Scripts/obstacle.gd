@@ -3,6 +3,8 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 var speed = 2.0
 
+# TODO: Highlight dangerous areas
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var child_nodes = get_children()
@@ -28,11 +30,11 @@ func _process(delta):
 	scale.y -= speed * delta
 	if scale.x < 1:
 		# Increase obstacle speed
-		if Globals.obstacle_speed < 9.0:
-			Globals.obstacle_speed += 0.1
+		if Globals.obstacle_speed < Globals.max_speed:
+			Globals.obstacle_speed += Globals.speed_acceleration
 		# Decrease minimum obstacle spawn time
-		if Globals.min_obstacle_spawn_time > 0.4:
-			Globals.min_obstacle_spawn_time -= 0.02
+		if Globals.min_obstacle_spawn_time > Globals.smallest_obstacle_spawn_time:
+			Globals.min_obstacle_spawn_time -= Globals.spawn_time_acceleration
 		# Player gains a point if game is not over yet
 		if Globals.in_game:
 			Globals.score += 1
