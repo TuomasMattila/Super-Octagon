@@ -11,6 +11,10 @@ script = ExtResource("1_l0g6e")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopArea"]
 polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
 
+[node name="TopBackground" type="Polygon2D" parent="TopArea"]
+color = Color(0.572549, 0, 0, 0.0431373)
+polygon = PackedVector2Array(0, 0, -32, -80, 32, -80)
+
 [node name="TopPolygon" type="Polygon2D" parent="TopArea"]
 color = Color(0.572549, 0, 0, 1)
 polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
@@ -20,6 +24,10 @@ rotation = -1.5708
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftArea"]
 polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
+
+[node name="LeftBackground" type="Polygon2D" parent="LeftArea"]
+color = Color(0.572549, 0, 0, 0.0431373)
+polygon = PackedVector2Array(0, 0, -32, -80, 32, -80)
 
 [node name="LeftPolygon" type="Polygon2D" parent="LeftArea"]
 color = Color(0.572549, 0, 0, 1)
@@ -31,6 +39,10 @@ rotation = 1.5708
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightArea"]
 polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
 
+[node name="RightBackground" type="Polygon2D" parent="RightArea"]
+color = Color(0.572549, 0, 0, 0.0431373)
+polygon = PackedVector2Array(0, 0, -32, -80, 32, -80)
+
 [node name="RightPolygon" type="Polygon2D" parent="RightArea"]
 color = Color(0.572549, 0, 0, 1)
 polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
@@ -41,6 +53,10 @@ rotation = -3.14159
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BottomArea"]
 polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
 
+[node name="BottomBackground" type="Polygon2D" parent="BottomArea"]
+color = Color(0.572549, 0, 0, 0.0431373)
+polygon = PackedVector2Array(0, 0, -32, -80, 32, -80)
+
 [node name="BottomPolygon" type="Polygon2D" parent="BottomArea"]
 color = Color(0.572549, 0, 0, 1)
 polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
@@ -49,6 +65,10 @@ polygon = PackedVector2Array(-32, -80, 32, -80, 28, -70, -28, -70)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopRightArea"]
 polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
+
+[node name="TopRightBackground" type="Polygon2D" parent="TopRightArea"]
+color = Color(0.572549, 0, 0, 0.0431373)
+polygon = PackedVector2Array(0, 0, 32, -80, 80, -32)
 
 [node name="TopRightPolygon" type="Polygon2D" parent="TopRightArea"]
 color = Color(0.572549, 0, 0, 1)
@@ -60,6 +80,10 @@ rotation = -1.5708
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopLeftArea"]
 polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
 
+[node name="TopLeftBackground" type="Polygon2D" parent="TopLeftArea"]
+color = Color(0.572549, 0, 0, 0.0431373)
+polygon = PackedVector2Array(0, 0, 32, -80, 80, -32)
+
 [node name="TopLeftPolygon" type="Polygon2D" parent="TopLeftArea"]
 color = Color(0.572549, 0, 0, 1)
 polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
@@ -70,6 +94,10 @@ rotation = -3.14159
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BottomLeftArea"]
 polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
 
+[node name="BottomLeftBackground" type="Polygon2D" parent="BottomLeftArea"]
+color = Color(0.572549, 0, 0, 0.0431373)
+polygon = PackedVector2Array(0, 0, 32, -80, 80, -32)
+
 [node name="BottomLeftPolygon" type="Polygon2D" parent="BottomLeftArea"]
 color = Color(0.572549, 0, 0, 1)
 polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
@@ -79,6 +107,10 @@ rotation = 1.5708
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BottomRightArea"]
 polygon = PackedVector2Array(32, -80, 80, -32, 70, -28, 28, -70)
+
+[node name="BottomRightBackground" type="Polygon2D" parent="BottomRightArea"]
+color = Color(0.572549, 0, 0, 0.0431373)
+polygon = PackedVector2Array(0, 0, 32, -80, 80, -32)
 
 [node name="BottomRightPolygon" type="Polygon2D" parent="BottomRightArea"]
 color = Color(0.572549, 0, 0, 1)

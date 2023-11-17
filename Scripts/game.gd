@@ -17,6 +17,7 @@ func _process(delta):
 	
 	# Go back to main menu
 	if !Globals.in_game and Input.is_action_pressed("ui_cancel"):
+		reset_variables()
 		get_tree().change_scene_to_file(Globals.SCENE_MAIN_MENU)
 		
 func reset_variables():
