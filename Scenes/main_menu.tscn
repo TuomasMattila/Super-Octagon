@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxnhf7q7gqfec"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_5n4se"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5n4se")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 1344.0
+offset_bottom = 768.0
+color = Color(0.2, 0.0862745, 0.0862745, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -57.5
+offset_top = 170.0
+offset_right = 57.5
+offset_bottom = 196.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_font_sizes/font_size = 64
+text = "Super Octagon"
+horizontal_alignment = 1
+
+[node name="VFlowContainer" type="VFlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = 128.0
+offset_right = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StartButton" type="Button" parent="VFlowContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="VFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+
+[connection signal="pressed" from="VFlowContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VFlowContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,5 +1,9 @@
 extends Node
 
+# Scenes
+const SCENE_MAIN_MENU = "res://Scenes/main_menu.tscn"
+const SCENE_GAME = "res://Scenes/game.tscn"
+
 # Game status
 var in_game = true
 

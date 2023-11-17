@@ -38,10 +38,10 @@ func _process(delta):
 		# Player gains a point if game is not over yet
 		if Globals.in_game:
 			Globals.score += 1
-			get_tree().call_group("main", "update_score")
+			get_tree().call_group("game", "update_score")
 		queue_free()
 
 func _on_area_2d_body_entered(body):
 	Globals.in_game = false
-	get_tree().call_group("main", "show_game_over_label")
+	get_tree().call_group("game", "show_game_over_label")
 	body.queue_free()

@@ -1,11 +1,9 @@
 extends Node2D
 
-# TODO: Create start screen
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# Pause game
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Globals.in_game and Input.is_action_just_pressed("ui_cancel"):
 		get_node("GameObjects").get_tree().paused = !get_node("GameObjects").get_tree().paused
 		if get_node("GameObjects").get_tree().paused:
 			get_node("UIElements/PauseScreen").show()
@@ -13,9 +11,13 @@ func _process(delta):
 			get_node("UIElements/PauseScreen").hide()
 			
 	# Restarting game
-	if Input.is_action_pressed("ui_accept"):
+	if !Globals.in_game and Input.is_action_pressed("ui_accept"):
 		reset_variables()
 		get_tree().reload_current_scene()
+	
+	# Go back to main menu
+	if !Globals.in_game and Input.is_action_pressed("ui_cancel"):
+		get_tree().change_scene_to_file(Globals.SCENE_MAIN_MENU)
 		
 func reset_variables():
 	Globals.in_game = true
