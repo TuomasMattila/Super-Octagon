@@ -3,6 +3,8 @@ extends CharacterBody2D
 const SPEED = 0.1
 @export var player_trail : PackedScene
 
+# TODO: Create "dash" ability for keyboard controls
+
 func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

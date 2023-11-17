@@ -3,7 +3,8 @@ extends Node2D
 var rng = RandomNumberGenerator.new()
 var speed = 2.0
 
-# TODO: Highlight dangerous areas
+# TODO: Prevent impossible situations by restricting obstacle features over time
+# - 7-part obstacles with opening on the opposing sides should not be possible at some point
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

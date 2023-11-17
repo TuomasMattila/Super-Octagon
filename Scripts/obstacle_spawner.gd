@@ -11,5 +11,6 @@ func _process(delta):
 		var obs = obstacle.instantiate()
 		owner.find_child("GameObjects").add_child(obs)
 		obs.position = position
+		# TODO: Make the maximum smaller over time
 		time_until_spawn = rng.randf_range(Globals.min_obstacle_spawn_time, 2.0)
 		#("Min spawn time: " + str(Globals.min_obstacle_spawn_time) + " Speed: " + str(Globals.obstacle_speed))
