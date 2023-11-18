@@ -1,7 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1y2ltvdmoh7y"]
+[gd_scene load_steps=8 format=3 uid="uid://c1y2ltvdmoh7y"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_xi04r"]
 [ext_resource type="PackedScene" uid="uid://coegbwni6fe3w" path="res://Scenes/player_trail.tscn" id="2_extyl"]
+[ext_resource type="AudioStream" uid="uid://43ft4dtvmnt2" path="res://Assets/403298__matrixxx__retro-explosion-02.wav" id="3_vlp4d"]
+[ext_resource type="AudioStream" uid="uid://ch5hb8lvrh0cg" path="res://Assets/92736__robinhood76__01522-swoosh-1.wav" id="4_l57du"]
+
+[sub_resource type="Gradient" id="Gradient_l7lqs"]
+offsets = PackedFloat32Array(0, 0.975207)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1o3tl"]
+gradient = SubResource("Gradient_l7lqs")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rw5er"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 1000.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color_ramp = SubResource("GradientTexture1D_1o3tl")
+turbulence_influence_min = 0.04
+turbulence_influence_max = 0.04
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xi04r")
@@ -15,3 +37,23 @@ polygon = PackedVector2Array(-8.00017, -48, -0.000231679, -64, 7.99983, -48)
 [node name="Polygon2D" type="Polygon2D" parent="."]
 color = Color(0.572549, 0, 0, 1)
 polygon = PackedVector2Array(112, -8, 128, 0, 112, 8)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(118, 0)
+emitting = false
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_rw5er")
+one_shot = true
+explosiveness = 0.85
+fixed_fps = 60
+trail_enabled = true
+trail_lifetime = 0.1
+trail_sections = 100
+trail_section_subdivisions = 100
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vlp4d")
+volume_db = -5.0
+
+[node name="DashSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_l57du")

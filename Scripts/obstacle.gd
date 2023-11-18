@@ -6,6 +6,8 @@ var speed = 2.0
 # TODO: Prevent impossible situations by restricting obstacle features over time
 # - 7-part obstacles with opening on the opposing sides should not be possible at some point
 
+# TODO: Make obstacles change color over time
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var child_nodes = get_children()
@@ -43,7 +45,9 @@ func _process(delta):
 		queue_free()
 
 func _on_area_2d_body_entered(body):
-	Globals.in_game = false
-	get_tree().call_group("game", "show_game_over_label")
-	# TODO: Create particle effect
-	body.queue_free()
+	if Globals.in_game:
+		Globals.in_game = false
+		body.get_node("DeathSound").play()
+		get_tree().call_group("game", "show_game_over_label")
+		body.get_node("GPUParticles2D").emitting = true
+		body.get_node("Polygon2D").visible = false
