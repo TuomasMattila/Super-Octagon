@@ -26,20 +26,20 @@ color = Color(0.0745098, 0.0745098, 0.0745098, 1)
 polygon = PackedVector2Array(-32, -80, 32, -80, 0, 0)
 
 [node name="TopRight" type="Polygon2D" parent="."]
-color = Color(0.109804, 0.109804, 0.109804, 1)
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 polygon = PackedVector2Array(640, -1600, 1600, -640, 0, 0)
 
 [node name="BottomRight" type="Polygon2D" parent="."]
 rotation = 1.5708
-color = Color(0.109804, 0.109804, 0.109804, 1)
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 polygon = PackedVector2Array(640, -1600, 1600, -640, 0, 0)
 
 [node name="BottomLeft" type="Polygon2D" parent="."]
 rotation = -3.14159
-color = Color(0.109804, 0.109804, 0.109804, 1)
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 polygon = PackedVector2Array(640, -1600, 1600, -640, 0, 0)
 
 [node name="TopLeft" type="Polygon2D" parent="."]
 rotation = -1.5708
-color = Color(0.109804, 0.109804, 0.109804, 1)
+color = Color(0.0862745, 0.0862745, 0.0862745, 1)
 polygon = PackedVector2Array(640, -1600, 1600, -640, 0, 0)

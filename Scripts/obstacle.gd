@@ -45,4 +45,5 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	Globals.in_game = false
 	get_tree().call_group("game", "show_game_over_label")
+	# TODO: Create particle effect
 	body.queue_free()

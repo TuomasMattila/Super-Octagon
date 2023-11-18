@@ -69,3 +69,14 @@ theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "Paused"
 horizontal_alignment = 1
+
+[node name="QuitToMainMenuButton" type="Button" parent="UIElements/PauseScreen"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 512.0
+offset_right = 720.0
+offset_bottom = 543.0
+theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
+text = "Quit to main menu"
+
+[connection signal="pressed" from="UIElements/PauseScreen/QuitToMainMenuButton" to="." method="_on_quit_to_main_menu_button_pressed"]
