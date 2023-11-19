@@ -2,6 +2,9 @@ extends Node2D
 
 var next_scene = null
 
+# TODO: It would probably be better to handle scene changes and transitions
+#       in a dedicated "scene manager" node.
+
 func _ready():
 	$TransitionScreen.fade_out()
 
@@ -17,13 +20,11 @@ func _process(delta):
 			
 	# Restarting game
 	if !Globals.in_game and Input.is_action_pressed("ui_accept"):
-		reset_variables()
 		$TransitionScreen.fade_in()
 		next_scene = Globals.SCENE_GAME
 	
 	# Go back to main menu
 	if !Globals.in_game and Input.is_action_pressed("ui_cancel"):
-		reset_variables()
 		$TransitionScreen.fade_in()
 		next_scene = Globals.SCENE_MAIN_MENU
 		
@@ -41,9 +42,9 @@ func show_game_over_label():
 
 func _on_quit_to_main_menu_button_pressed():
 	get_node("GameObjects").get_tree().paused = false
-	reset_variables()
 	$TransitionScreen.fade_in()
 	next_scene = Globals.SCENE_MAIN_MENU
 
 func _on_transition_screen_transitioned():
+	reset_variables()
 	get_tree().change_scene_to_file(next_scene)
