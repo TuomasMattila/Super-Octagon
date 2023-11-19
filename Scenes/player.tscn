@@ -35,7 +35,6 @@ rotation = 1.5708
 polygon = PackedVector2Array(-8.00017, -48, -0.000231679, -64, 7.99983, -48)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.572549, 0, 0, 1)
 polygon = PackedVector2Array(112, -8, 128, 0, 112, 8)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bb0aj6sug8lb5"]
+[gd_scene load_steps=11 format=3 uid="uid://bb0aj6sug8lb5"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_hxa1w"]
 [ext_resource type="Script" path="res://Scripts/GameObjects.gd" id="1_q78ny"]
@@ -7,6 +7,44 @@
 [ext_resource type="PackedScene" uid="uid://c1y2ltvdmoh7y" path="res://Scenes/player.tscn" id="4_7tyk6"]
 [ext_resource type="PackedScene" uid="uid://eiaq21uhv1t7" path="res://Scenes/obstacle_spawner.tscn" id="5_mpxij"]
 [ext_resource type="PackedScene" uid="uid://e61nr4nix6t4" path="res://Scenes/transition_screen.tscn" id="7_imstq"]
+
+[sub_resource type="Animation" id="Animation_qydcy"]
+resource_name = "color_change"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 0.878431), Color(1, 1, 0, 0.878431), Color(0.2, 1, 0, 0.878431), Color(0, 0.133333, 1, 0.878431), Color(1, 0, 0.898039, 0.878431), Color(1, 0, 0, 0.878431)]
+}
+
+[sub_resource type="Animation" id="Animation_ej860"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.4, 0.4, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0vvm3"]
+_data = {
+"RESET": SubResource("Animation_ej860"),
+"color_change": SubResource("Animation_qydcy")
+}
 
 [node name="Game" type="Node2D" groups=["game"]]
 process_mode = 3
@@ -21,6 +59,7 @@ script = ExtResource("1_q78ny")
 
 [node name="Center" parent="GameObjects" instance=ExtResource("3_fmp6a")]
 z_index = 2
+color = Color(0.0431373, 0.0431373, 0.0431373, 1)
 
 [node name="Player" parent="GameObjects" instance=ExtResource("4_7tyk6")]
 z_index = 1
@@ -66,7 +105,7 @@ offset_left = 576.0
 offset_top = 192.0
 offset_right = 704.0
 offset_bottom = 240.0
-theme_override_colors/font_color = Color(0.666667, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 text = "Paused"
 horizontal_alignment = 1
@@ -81,6 +120,20 @@ theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 text = "Quit to main menu"
 
 [node name="TransitionScreen" parent="." instance=ExtResource("7_imstq")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-640, -368)
+anchor_mode = 0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Camera2D"]
+color = Color(1, 0, 0, 0.878431)
+
+[node name="ColorShiftAnimation" type="AnimationPlayer" parent="Camera2D/CanvasModulate"]
+autoplay = "color_change"
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_0vvm3")
+}
 
 [connection signal="pressed" from="UIElements/PauseScreen/QuitToMainMenuButton" to="." method="_on_quit_to_main_menu_button_pressed"]
 [connection signal="transitioned" from="TransitionScreen" to="." method="_on_transition_screen_transitioned"]

@@ -6,6 +6,6 @@
 self_modulate = Color(1, 1, 1, 0.380392)
 show_behind_parent = true
 z_index = 1
-color = Color(0.227451, 0.227451, 0.227451, 1)
+color = Color(1, 1, 1, 0.509804)
 polygon = PackedVector2Array(112, -8, 128, 0, 112, 8)
 script = ExtResource("1_x0lq1")
