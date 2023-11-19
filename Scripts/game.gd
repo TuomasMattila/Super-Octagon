@@ -41,10 +41,10 @@ func show_game_over_label():
 	$UIElements/GameOverLabel.show()
 
 func _on_quit_to_main_menu_button_pressed():
-	get_node("GameObjects").get_tree().paused = false
 	$TransitionScreen.fade_in()
 	next_scene = Globals.SCENE_MAIN_MENU
 
 func _on_transition_screen_transitioned():
+	get_node("GameObjects").get_tree().paused = false
 	reset_variables()
 	get_tree().change_scene_to_file(next_scene)

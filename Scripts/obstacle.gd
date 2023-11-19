@@ -49,5 +49,6 @@ func _on_area_2d_body_entered(body):
 		Globals.in_game = false
 		body.get_node("DeathSound").play()
 		get_tree().call_group("game", "show_game_over_label")
+		get_tree().get_first_node_in_group("transition").flash()
 		body.get_node("GPUParticles2D").emitting = true
 		body.get_node("Polygon2D").visible = false
