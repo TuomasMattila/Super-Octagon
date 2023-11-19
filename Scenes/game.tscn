@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bb0aj6sug8lb5"]
+[gd_scene load_steps=8 format=3 uid="uid://bb0aj6sug8lb5"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_hxa1w"]
 [ext_resource type="Script" path="res://Scripts/GameObjects.gd" id="1_q78ny"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cedtn1pym0lqm" path="res://Scenes/center.tscn" id="3_fmp6a"]
 [ext_resource type="PackedScene" uid="uid://c1y2ltvdmoh7y" path="res://Scenes/player.tscn" id="4_7tyk6"]
 [ext_resource type="PackedScene" uid="uid://eiaq21uhv1t7" path="res://Scenes/obstacle_spawner.tscn" id="5_mpxij"]
+[ext_resource type="PackedScene" uid="uid://e61nr4nix6t4" path="res://Scenes/transition_screen.tscn" id="7_imstq"]
 
 [node name="Game" type="Node2D" groups=["game"]]
 process_mode = 3
@@ -79,4 +80,7 @@ offset_bottom = 543.0
 theme_override_colors/font_color = Color(0.847059, 0.847059, 0.847059, 1)
 text = "Quit to main menu"
 
+[node name="TransitionScreen" parent="." instance=ExtResource("7_imstq")]
+
 [connection signal="pressed" from="UIElements/PauseScreen/QuitToMainMenuButton" to="." method="_on_quit_to_main_menu_button_pressed"]
+[connection signal="transitioned" from="TransitionScreen" to="." method="_on_transition_screen_transitioned"]

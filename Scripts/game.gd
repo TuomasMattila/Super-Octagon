@@ -1,5 +1,10 @@
 extends Node2D
 
+var next_scene = null
+
+func _ready():
+	$TransitionScreen.fade_out()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# Pause game
@@ -13,12 +18,14 @@ func _process(delta):
 	# Restarting game
 	if !Globals.in_game and Input.is_action_pressed("ui_accept"):
 		reset_variables()
-		get_tree().reload_current_scene()
+		$TransitionScreen.fade_in()
+		next_scene = Globals.SCENE_GAME
 	
 	# Go back to main menu
 	if !Globals.in_game and Input.is_action_pressed("ui_cancel"):
 		reset_variables()
-		get_tree().change_scene_to_file(Globals.SCENE_MAIN_MENU)
+		$TransitionScreen.fade_in()
+		next_scene = Globals.SCENE_MAIN_MENU
 		
 func reset_variables():
 	Globals.in_game = true
@@ -35,5 +42,8 @@ func show_game_over_label():
 func _on_quit_to_main_menu_button_pressed():
 	get_node("GameObjects").get_tree().paused = false
 	reset_variables()
-	get_tree().change_scene_to_file(Globals.SCENE_MAIN_MENU)
+	$TransitionScreen.fade_in()
+	next_scene = Globals.SCENE_MAIN_MENU
 
+func _on_transition_screen_transitioned():
+	get_tree().change_scene_to_file(next_scene)
